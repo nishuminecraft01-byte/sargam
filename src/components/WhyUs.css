@@ -1,0 +1,115 @@
+/* ===================================================
+   HOUSE OF BLUSH — WHY CHOOSE US
+   =================================================== */
+
+.whyus {
+  background-color: var(--beige-light);
+  border-top: 1px solid var(--border-blush);
+  border-bottom: 1px solid var(--border-blush);
+}
+
+.whyus__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-bottom: 48px;
+}
+
+.whyus__block {
+  background-color: var(--ivory-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+  position: relative;
+}
+
+.whyus__block:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--blush);
+}
+
+.whyus__block-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.whyus__block-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--rose);
+  font-weight: 400;
+}
+
+.whyus__icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--blush-pale);
+  color: var(--chocolate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-blush);
+  transition: all var(--transition-fast);
+}
+
+.whyus__block:hover .whyus__icon-box {
+  background-color: var(--chocolate);
+  color: var(--ivory);
+  border-color: var(--chocolate);
+}
+
+.whyus__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--chocolate);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.whyus__desc {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.whyus__note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.whyus__note-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .whyus__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .whyus__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .whyus__block {
+    padding: 28px 22px;
+  }
+}

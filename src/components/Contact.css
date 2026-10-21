@@ -1,0 +1,134 @@
+/* ===================================================
+   HOUSE OF BLUSH — CONTACT & SALON INFO
+   =================================================== */
+
+.contact {
+  background-color: var(--ivory);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.contact__card {
+  background-color: var(--ivory-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+}
+
+.contact__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--blush);
+}
+
+.contact__card--featured {
+  background: linear-gradient(180deg, var(--ivory-card) 0%, var(--blush-pale) 100%);
+  border-color: var(--border-blush);
+}
+
+.contact__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.contact__icon-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--blush-pale);
+  color: var(--chocolate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-blush);
+}
+
+.contact__card-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--chocolate);
+  margin-bottom: 8px;
+}
+
+.contact__card-content {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--chocolate);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.contact__card-subtext {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.contact__hours-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.contact__hours-line {
+  font-size: 0.85rem;
+  color: var(--chocolate);
+  font-weight: 400;
+}
+
+.contact__hours-note {
+  font-size: 0.74rem;
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.contact__card-action {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 12px 18px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  margin-top: auto;
+}
+
+.btn--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: var(--beige-light) !important;
+  color: var(--text-muted) !important;
+  border-color: var(--border-subtle) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .contact__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

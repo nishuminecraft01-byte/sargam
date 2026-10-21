@@ -1,0 +1,367 @@
+/* ===================================================
+   HOUSE OF BLUSH — PORTFOLIO & BEAUTY GALLERY
+   =================================================== */
+
+.gallery {
+  background-color: var(--ivory);
+}
+
+/* Category Filters */
+.gallery__filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.gallery__filter-btn {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background-color: var(--beige-light);
+  border: 1px solid var(--border-beige);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.gallery__filter-btn:hover {
+  color: var(--chocolate);
+  border-color: var(--rose);
+  background-color: var(--ivory-card);
+}
+
+.gallery__filter-btn--active {
+  background-color: var(--chocolate);
+  color: var(--ivory);
+  border-color: var(--chocolate);
+}
+
+.gallery__filter-btn--active:hover {
+  background-color: var(--chocolate-light);
+  color: var(--ivory);
+}
+
+/* Masonry Editorial Grid */
+.gallery__masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.gallery__card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  background-color: var(--beige);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.gallery__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.gallery__card--tall {
+  height: 480px;
+}
+
+.gallery__card--medium {
+  height: 380px;
+}
+
+.gallery__card--wide {
+  height: 320px;
+}
+
+.gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery__card:hover .gallery__image {
+  transform: scale(1.06);
+}
+
+/* Card Overlay */
+.gallery__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(57, 40, 42, 0) 30%,
+    rgba(57, 40, 42, 0.82) 100%
+  );
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  transition: opacity var(--transition-med);
+}
+
+.gallery__card:hover .gallery__overlay,
+.gallery__card:focus .gallery__overlay {
+  opacity: 1;
+}
+
+.gallery__category-pill {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blush);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.gallery__caption {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ivory);
+  line-height: 1.35;
+}
+
+.gallery__zoom-icon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 249, 245, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--chocolate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.gallery__card:hover .gallery__zoom-icon {
+  transform: scale(1.1);
+}
+
+/* Instagram Inspiration CTA Block */
+.gallery__instagram-cta {
+  background: linear-gradient(135deg, var(--chocolate) 0%, #4D3337 100%);
+  color: var(--ivory);
+  border-radius: var(--radius-sm);
+  padding: 44px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(232, 184, 188, 0.25);
+}
+
+.gallery__instagram-cta .section-eyebrow {
+  color: var(--blush);
+}
+
+.gallery__instagram-cta .section-eyebrow::before {
+  background-color: var(--blush);
+}
+
+.gallery__instagram-cta-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--ivory);
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.gallery__instagram-cta-sub {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--blush-light);
+  max-width: 580px;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: rgba(39, 25, 27, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox__dialog {
+  position: relative;
+  max-width: 1000px;
+  max-height: 92vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--chocolate);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(232, 184, 188, 0.3);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox__media {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1E1214;
+  overflow: hidden;
+  max-height: 75vh;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox__footer {
+  padding: 18px 24px;
+  background-color: var(--chocolate);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(232, 184, 188, 0.15);
+  gap: 20px;
+}
+
+.lightbox__category {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blush);
+  font-weight: 600;
+  display: block;
+}
+
+.lightbox__desc {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--ivory);
+  margin-top: 2px;
+}
+
+.lightbox__counter {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--blush-light);
+  white-space: nowrap;
+}
+
+/* Lightbox Navigation Buttons */
+.lightbox__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(57, 40, 42, 0.75);
+  border: 1px solid rgba(232, 184, 188, 0.3);
+  color: var(--ivory);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox__close-btn:hover {
+  background: var(--rose);
+  transform: rotate(90deg);
+}
+
+.lightbox__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(57, 40, 42, 0.75);
+  border: 1px solid rgba(232, 184, 188, 0.3);
+  color: var(--ivory);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.lightbox__arrow:hover {
+  background: var(--rose);
+  border-color: var(--rose);
+}
+
+.lightbox__arrow--left {
+  left: 16px;
+}
+
+.lightbox__arrow--right {
+  right: 16px;
+}
+
+/* Responsiveness */
+@media (max-width: 960px) {
+  .gallery__masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery__card--tall {
+    height: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery__masonry {
+    grid-template-columns: 1fr;
+  }
+  .gallery__card--tall,
+  .gallery__card--medium,
+  .gallery__card--wide {
+    height: 320px;
+  }
+  .gallery__instagram-cta {
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gallery__instagram-cta-action,
+  .gallery__instagram-cta-action .btn {
+    width: 100%;
+  }
+  .lightbox__arrow {
+    width: 38px;
+    height: 38px;
+  }
+  .lightbox__arrow--left {
+    left: 8px;
+  }
+  .lightbox__arrow--right {
+    right: 8px;
+  }
+}

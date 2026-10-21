@@ -1,0 +1,214 @@
+/* ===================================================
+   HOUSE OF BLUSH — FOOTER STYLING
+   =================================================== */
+
+.footer {
+  background-color: var(--chocolate-dark);
+  color: var(--ivory);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer__main {
+  padding: 88px 0 64px;
+  border-bottom: 1px solid rgba(232, 184, 188, 0.15);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr 1.3fr;
+  gap: 48px;
+}
+
+/* Brand Column */
+.footer__brand-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__brand-link {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.footer__wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  line-height: 1.1;
+}
+
+.footer__signature {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  letter-spacing: 0.1em;
+  color: var(--blush);
+}
+
+.footer__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--blush-light);
+  margin-bottom: 14px;
+}
+
+.footer__bio {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #DDD0CE;
+  margin-bottom: 24px;
+  max-width: 320px;
+}
+
+.footer__social-row {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--blush);
+  background: rgba(232, 184, 188, 0.08);
+  border: 1px solid rgba(232, 184, 188, 0.25);
+  padding: 8px 16px;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.footer__social-btn:hover {
+  background: var(--blush);
+  color: var(--chocolate);
+}
+
+/* Nav Columns */
+.footer__col-heading {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blush);
+  margin-bottom: 24px;
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__nav-link {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: #E2D3D1;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
+}
+
+.footer__nav-link:hover {
+  color: var(--blush);
+  transform: translateX(4px);
+}
+
+/* Notice Column */
+.footer__notice-text {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: #DDD0CE;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.footer__hours-card {
+  background: rgba(255, 249, 245, 0.05);
+  border: 1px solid rgba(232, 184, 188, 0.15);
+  border-radius: var(--radius-xs);
+  padding: 12px 14px;
+  font-size: 0.8rem;
+  color: var(--blush-pale);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.footer__book-btn {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px 20px;
+  font-size: 0.72rem;
+}
+
+.footer__demo-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer__demo-pill-sub {
+  font-size: 0.72rem;
+  color: var(--blush-light);
+  font-style: italic;
+}
+
+/* Understated Bottom Bar */
+.footer__bottom {
+  padding: 22px 0;
+  background-color: #1E1214;
+  font-size: 0.78rem;
+  color: #A89598;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer__copy {
+  letter-spacing: 0.02em;
+}
+
+.footer__crevinox-credit {
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--blush-light);
+  font-weight: 400;
+}
+
+/* Responsiveness */
+@media (max-width: 960px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer__main {
+    padding: 60px 0 40px;
+  }
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .footer__bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,512 @@
+/* ===================================================
+   HOUSE OF BLUSH by Sargam — LUXURY DESIGN SYSTEM
+   Editorial Beauty Brand Aesthetic
+   Developed by CREVINOX
+   =================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --blush: #E8B8BC;
+  --blush-light: #F7E5E7;
+  --blush-pale: #FBF4F5;
+  --blush-deep: #DCA2A7;
+
+  --ivory: #FFF9F5;
+  --ivory-pure: #FFFFFF;
+  --ivory-card: #FFFFFF;
+
+  --beige: #E9D8C8;
+  --beige-light: #F7F1EB;
+  --beige-tint: #F2E7DC;
+
+  --chocolate: #39282A;
+  --chocolate-light: #523B3E;
+  --chocolate-dark: #27191B;
+
+  --rose: #B96F7A;
+  --rose-light: #CD8590;
+  --rose-dark: #98515C;
+
+  /* Neutrals & Text */
+  --text-main: #39282A;
+  --text-muted: #736164;
+  --text-light: #9B898C;
+  --text-on-dark: #FFF9F5;
+
+  /* Borders & Shadows */
+  --border-subtle: rgba(57, 40, 42, 0.08);
+  --border-beige: rgba(233, 216, 200, 0.6);
+  --border-blush: rgba(232, 184, 188, 0.5);
+  --border-dark: rgba(57, 40, 42, 0.2);
+
+  --shadow-subtle: 0 4px 20px rgba(57, 40, 42, 0.04);
+  --shadow-card: 0 10px 30px rgba(57, 40, 42, 0.07);
+  --shadow-hover: 0 20px 45px rgba(57, 40, 42, 0.12);
+  --shadow-dropdown: 0 16px 36px rgba(57, 40, 42, 0.14);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sizing & Transitions */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  --container: 1240px;
+  --section-padding: 104px;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-med: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--ivory);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.01em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===================================================
+   TYPOGRAPHY
+   =================================================== */
+
+.editorial-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--chocolate);
+}
+
+.editorial-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 16px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--rose);
+}
+
+.section-eyebrow.centered::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--rose);
+}
+
+.section-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  font-weight: 400;
+  color: var(--chocolate);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+
+.section-description {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.75;
+  max-width: 600px;
+}
+
+/* ===================================================
+   LAYOUT & CONTAINERS
+   =================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-header.center {
+  text-align: center;
+}
+
+.section-header.center .section-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Editorial divider */
+.editorial-line {
+  width: 50px;
+  height: 1px;
+  background: var(--rose);
+  opacity: 0.6;
+  margin: 20px 0;
+}
+
+.editorial-line.center {
+  margin: 20px auto;
+}
+
+/* ===================================================
+   BUTTONS & CTAS
+   =================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 16px 34px;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-med);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--chocolate);
+  color: var(--ivory);
+  border: 1px solid var(--chocolate);
+}
+
+.btn-primary:hover {
+  background-color: var(--chocolate-light);
+  border-color: var(--chocolate-light);
+  color: var(--ivory-pure);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(57, 40, 42, 0.18);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--chocolate);
+  border: 1px solid var(--chocolate);
+}
+
+.btn-secondary:hover {
+  background-color: var(--chocolate);
+  color: var(--ivory);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(57, 40, 42, 0.12);
+}
+
+.btn-light-outline {
+  background-color: transparent;
+  color: var(--ivory);
+  border: 1px solid rgba(255, 249, 245, 0.7);
+}
+
+.btn-light-outline:hover {
+  background-color: var(--ivory);
+  color: var(--chocolate);
+  border-color: var(--ivory);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-blush {
+  background-color: var(--blush);
+  color: var(--chocolate);
+  border: 1px solid var(--blush);
+}
+
+.btn-blush:hover {
+  background-color: var(--blush-deep);
+  border-color: var(--blush-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 184, 188, 0.4);
+}
+
+.btn-rose {
+  background-color: var(--rose);
+  color: var(--ivory-pure);
+  border: 1px solid var(--rose);
+}
+
+.btn-rose:hover {
+  background-color: var(--rose-dark);
+  border-color: var(--rose-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(185, 111, 122, 0.35);
+}
+
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose);
+  padding: 4px 0;
+  border-bottom: 1px solid var(--rose);
+  transition: all var(--transition-fast);
+}
+
+.btn-text:hover {
+  color: var(--chocolate);
+  border-bottom-color: var(--chocolate);
+  gap: 12px;
+}
+
+/* ===================================================
+   SAMPLE CONTENT & DEMO NOTICE BADGES
+   =================================================== */
+
+.sample-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose-dark);
+  background: rgba(232, 184, 188, 0.28);
+  border: 1px dashed var(--rose);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  vertical-align: middle;
+}
+
+.sample-pill {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  background-color: var(--beige-light);
+  border: 1px solid var(--border-beige);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.demo-banner-strip {
+  background: linear-gradient(90deg, #39282A 0%, #523B3E 100%);
+  color: var(--blush-light);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 8px 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(232, 184, 188, 0.2);
+}
+
+.demo-banner-strip a {
+  color: var(--blush);
+  text-decoration: underline;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+/* ===================================================
+   SCROLL REVEAL ANIMATIONS
+   =================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.4s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+
+/* ===================================================
+   REDUCED MOTION SUPPORT
+   =================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===================================================
+   CUSTOM SCROLLBAR & SELECTION
+   =================================================== */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blush);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rose);
+}
+
+::selection {
+  background: var(--blush);
+  color: var(--chocolate);
+}
+
+/* ===================================================
+   RESPONSIVE BREAKPOINTS
+   =================================================== */
+
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: 80px;
+  }
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 64px;
+  }
+  .container {
+    padding: 0 20px;
+  }
+  .section-headline {
+    font-size: clamp(2rem, 7vw, 2.7rem);
+  }
+  .btn {
+    padding: 14px 28px;
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 52px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+}

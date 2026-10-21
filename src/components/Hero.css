@@ -1,0 +1,255 @@
+/* ===================================================
+   HOUSE OF BLUSH — HERO SECTION
+   =================================================== */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 36px);
+  min-height: calc(100dvh - 36px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--chocolate);
+}
+
+/* Background Media & Editorial Vignette */
+.hero__media-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transform: scale(1.02);
+  transition: transform 1.2s ease-out;
+}
+
+.hero__vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(39, 25, 27, 0.82) 0%,
+    rgba(57, 40, 42, 0.62) 40%,
+    rgba(185, 111, 122, 0.38) 100%
+  );
+  backdrop-filter: blur(0.5px);
+}
+
+/* Flex Column Content Container */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: clamp(60px, 12vh, 120px);
+  padding-bottom: 36px;
+}
+
+/* Center Box (Text + Buttons) */
+.hero__center-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 780px;
+}
+
+.hero__eyebrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.hero__eyebrow-tag {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blush);
+}
+
+.hero__eyebrow-author {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--blush-light);
+  border-left: 1px solid rgba(232, 184, 188, 0.4);
+  padding-left: 12px;
+}
+
+.hero__headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--ivory);
+  margin-bottom: 24px;
+}
+
+.hero__headline-emphasis {
+  font-style: italic;
+  font-weight: 300;
+  color: #FFF2ED;
+  position: relative;
+  display: inline-block;
+}
+
+.hero__headline-emphasis::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--blush) 0%, transparent 100%);
+  opacity: 0.6;
+}
+
+.hero__subtext {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: #EBDAD8;
+  max-width: 560px;
+  margin-bottom: 40px;
+  letter-spacing: 0.01em;
+}
+
+.hero__cta-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hero__btn-primary {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero__btn-secondary {
+  border-color: rgba(255, 249, 245, 0.65);
+}
+
+/* Bottom Bar */
+.hero__bottom-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 249, 245, 0.15);
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.hero__hallmarks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blush-light);
+  font-weight: 400;
+}
+
+.hero__hallmark-dot {
+  color: var(--rose-light);
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+.hero__scroll-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  color: var(--ivory);
+  transition: opacity var(--transition-fast);
+  padding: 6px 0;
+}
+
+.hero__scroll-indicator:hover {
+  opacity: 0.8;
+}
+
+.hero__scroll-text {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--blush);
+}
+
+.hero__scroll-track {
+  width: 16px;
+  height: 28px;
+  border: 1.5px solid rgba(232, 184, 188, 0.6);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.hero__scroll-thumb {
+  width: 3px;
+  height: 6px;
+  background-color: var(--blush);
+  border-radius: 2px;
+  animation: heroScrollBob 2s infinite ease-in-out;
+}
+
+@keyframes heroScrollBob {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 0.3;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hero__content {
+    padding-top: 60px;
+    padding-bottom: 28px;
+  }
+  .hero__hallmarks {
+    display: none;
+  }
+  .hero__bottom-bar {
+    justify-content: center;
+    border-top: none;
+    margin-top: 24px;
+    padding-top: 12px;
+  }
+  .hero__cta-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero__btn-primary,
+  .hero__btn-secondary {
+    width: 100%;
+  }
+}

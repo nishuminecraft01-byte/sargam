@@ -1,0 +1,32 @@
+/* ===================================================
+   HOUSE OF BLUSH — APP GLOBAL STYLES
+   =================================================== */
+
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--ivory);
+}
+
+/* Skip link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 20px;
+  z-index: 9999;
+  background: var(--chocolate);
+  color: var(--ivory);
+  padding: 10px 22px;
+  border-radius: 0 0 var(--radius-xs) var(--radius-xs);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: top 0.2s ease;
+  border: 1px solid var(--blush);
+}
+
+.skip-link:focus {
+  top: 0;
+}
